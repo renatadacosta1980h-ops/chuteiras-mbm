@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CHUTEIRAS MBM — chuteiras para campo, society e futsal.">
+  <title>CHUTEIRAS MBM | Jogue no seu melhor</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="CHUTEIRAS MBM, início"><span class="brand-mark">M</span><span>CHUTEIRAS <b>MBM</b></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu"><a href="#catalogo">Catálogo</a><a href="#modalidades">Modalidades</a><a href="#sobre">A MBM</a></nav>
+    <button class="cart-button" id="open-cart" aria-label="Abrir carrinho">Carrinho <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">PERFORMANCE EM CADA JOGADA</p>
+        <h1>A chuteira certa muda o seu jogo.</h1>
+        <p class="hero-copy">Campo, society e futsal. Escolha a sua próxima parceira de jogo na CHUTEIRAS MBM.</p>
+        <a class="button primary" href="#catalogo">Ver chuteiras <span>→</span></a>
+      </div>
+      <p class="hero-note">Imagens ilustrativas. Venda somente produtos originais e com fotos autorizadas.</p>
+    </section>
+
+    <section id="modalidades" class="section modes">
+      <div class="section-heading"><p class="eyebrow">ENCONTRE O SEU SOLADO</p><h2>Feita para a sua quadra.</h2></div>
+      <div class="mode-grid">
+        <button class="mode-card" data-category="Campo"><strong>01</strong><span>Campo</span><small>FG · AG · MG</small></button>
+        <button class="mode-card" data-category="Fut7"><strong>02</strong><span>Fut7</span><small>TF · Society</small></button>
+        <button class="mode-card" data-category="Futsal"><strong>03</strong><span>Futsal</span><small>IC · IN</small></button>
+      </div>
+    </section>
+
+    <section id="catalogo" class="section catalog">
+      <div class="section-heading"><p class="eyebrow">CATÁLOGO MBM</p><h2>Escolha seu próximo par.</h2></div>
+      <div class="filters" aria-label="Filtros de catálogo">
+        <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Buscar modelo ou marca"></label>
+        <select id="brand-filter" aria-label="Filtrar por marca"><option value="Todas">Todas as marcas</option></select>
+        <select id="category-filter" aria-label="Filtrar por modalidade"><option value="Todas">Todas modalidades</option><option>Campo</option><option>Fut7</option><option>Futsal</option></select>
+        <select id="sort" aria-label="Ordenar produtos"><option value="featured">Em destaque</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select>
+      </div>
+      <p id="result-count" class="result-count"></p>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section id="sobre" class="section about"><p class="eyebrow">CHUTEIRAS MBM</p><h2>Jogo sério pede equipamento sério.</h2><p>Uma vitrine criada para facilitar a escolha entre velocidade, controle e conforto. Atendimento humano pelo WhatsApp.</p></section>
+  </main>
+
+  <a id="whatsapp-float" class="whatsapp-float" target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp">⌕ <span>Fale conosco</span></a>
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true"><div class="cart-head"><h2>Seu carrinho</h2><button id="close-cart" aria-label="Fechar carrinho">×</button></div><div id="cart-items"></div><div class="cart-footer"><p>Total <strong id="cart-total">R$ 0,00</strong></p><button id="checkout" class="button primary">Finalizar no WhatsApp</button></div></aside>
+  <div id="overlay" class="overlay"></div>
+  <dialog id="product-dialog"><button id="close-dialog" class="dialog-close" aria-label="Fechar">×</button><div id="dialog-content"></div></dialog>
+  <script src="products.js"></script><script src="app.js"></script>
+</body>
+</html>
