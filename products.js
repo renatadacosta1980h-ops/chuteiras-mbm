@@ -1,6 +1,6 @@
 const products = [
   ['Nike', 'Mercurial Vapor 16 Elite FG', 'Campo', 1499.90, '029427NXA3.jpg', 8],
-  ['Nike', 'Zoom Mercurial Superfly 11 Elite FG', 'Campo', 1599.90, '098543CTA7.avif', 5],
+  ['Nike', 'Zoom Mercurial Superfly 11 Elite FG', 'Campo', 1599.90, '098543CTA10.jpg', 5],
   ['Nike', 'Tiempo Maestro Elite', 'Campo', 1747.99, '098713CTA11.jpg', 4],
   ['Nike', 'Chuteira Campo — Ref. 060728 ID', 'Campo', 0, '060728IDA2.avif', 0, false],
   ['Nike', 'Chuteira Campo — Ref. 060728 IE', 'Campo', 0, '060728IEA1.avif', 0, false],
