@@ -1,6 +1,5 @@
-const MBM_CATALOG_KEY = 'mbm-shared-catalog-v2';
-const MBM_LEGACY_CATALOG_KEY = 'mbm-shared-catalog-v1';
-const NEW_NIKE_REFERENCE_IDS = new Set([4, 5, 6, 7]);
+const MBM_CATALOG_KEY = 'mbm-shared-catalog-v3';
+const MBM_LEGACY_CATALOG_KEYS = ['mbm-shared-catalog-v2', 'mbm-shared-catalog-v1'];
 
 function prepareProduct(product, index) {
   return {
@@ -16,13 +15,13 @@ function getStoreProducts() {
   try {
     const current = JSON.parse(localStorage.getItem(MBM_CATALOG_KEY));
     if (Array.isArray(current) && current.length) return current.map(prepareProduct);
-    const previous = JSON.parse(localStorage.getItem(MBM_LEGACY_CATALOG_KEY));
-    if (Array.isArray(previous) && previous.length) {
+    for (const key of MBM_LEGACY_CATALOG_KEYS) {
+      const previous = JSON.parse(localStorage.getItem(key));
+      if (!Array.isArray(previous) || !previous.length) continue;
       const legacyById = new Map(previous.map(product => [Number(product.id), product]));
       const migrated = products.map((product, index) => {
-        const id = Number(product.id) || index + 1;
-        const legacy = legacyById.get(id);
-        return prepareProduct(NEW_NIKE_REFERENCE_IDS.has(id) || !legacy ? product : { ...product, ...legacy }, index);
+        const legacy = legacyById.get(index + 1);
+        return prepareProduct(legacy ? { ...product, price: legacy.price, stock: legacy.stock, active: legacy.active, sizes: legacy.sizes } : product, index);
       });
       localStorage.setItem(MBM_CATALOG_KEY, JSON.stringify(migrated));
       return migrated;
