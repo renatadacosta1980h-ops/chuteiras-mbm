@@ -15,9 +15,9 @@ function prepareProduct(product, index) {
 function getStoreProducts() {
   try {
     const current = JSON.parse(localStorage.getItem(MBM_CATALOG_KEY));
-    if (Array.isArray(current)) return current.map(prepareProduct);
+    if (Array.isArray(current) && current.length) return current.map(prepareProduct);
     const previous = JSON.parse(localStorage.getItem(MBM_LEGACY_CATALOG_KEY));
-    if (Array.isArray(previous)) {
+    if (Array.isArray(previous) && previous.length) {
       const legacyById = new Map(previous.map(product => [Number(product.id), product]));
       const migrated = products.map((product, index) => {
         const id = Number(product.id) || index + 1;
