@@ -2,10 +2,10 @@ const products = [
   ['Nike', 'Mercurial Vapor 16 Elite FG', 'Campo', 1499.90, '029427NXA3.jpg', 8],
   ['Nike', 'Zoom Mercurial Superfly 11 Elite FG', 'Campo', 1599.90, '098543CTA10.jpg', 5],
   ['Nike', 'Tiempo Maestro Elite', 'Campo', 1747.99, '098713CTA11.jpg', 4],
-  ['Nike', 'Chuteira Campo — Ref. 060728 ID', 'Campo', 0, '060728IDA2.avif', 0, false],
-  ['Nike', 'Chuteira Campo — Ref. 060728 IE', 'Campo', 0, '060728IEA1.avif', 0, false],
-  ['Nike', 'Chuteira Campo — Ref. 060728 P1', 'Campo', 0, '060728P1A12.avif', 0, false],
-  ['Nike', 'Chuteira Campo — Ref. 060728 16', 'Campo', 0, '06072816A2.avif', 0, false],
+  ['Nike', 'Chuteira Campo - Ref. 060728 ID', 'Campo', 0, '060728IDA2.jpg', 1],
+  ['Nike', 'Chuteira Campo - Ref. 060728 IE', 'Campo', 0, '060728IEA1.jpg', 1],
+  ['Nike', 'Chuteira Campo - Ref. 060728 P1', 'Campo', 0, '060728P1A12.jpg', 1],
+  ['Nike', 'Chuteira Campo - Ref. 060728 16', 'Campo', 0, '06072816A2.jpg', 1],
   ['Nike', 'Tiempo Legend 10 Academy TF', 'Fut7', 499.90, 'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=900&q=85', 12],
   ['Nike', 'Lunar Gato II', 'Futsal', 699.90, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85', 6],
   ['Adidas', 'Predator Elite FG', 'Campo', 1399.90, 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=900&q=85', 7],
@@ -30,5 +30,5 @@ const products = [
   stock,
   active,
   sizes: [38, 39, 40, 41, 42, 43, 44],
-  description: `${category === 'Campo' ? 'Velocidade, controle e tração para gramado.' : category === 'Fut7' ? 'Conforto e aderência para gramado sintético.' : 'Controle preciso e estabilidade para a quadra.'} Confirme a disponibilidade e as características com o atendimento MBM.`
+  description: `${category === 'Campo' ? 'Velocidade, controle e tracao para gramado.' : category === 'Fut7' ? 'Conforto e aderencia para gramado sintetico.' : 'Controle preciso e estabilidade para a quadra.'} Confirme a disponibilidade e as caracteristicas com o atendimento MBM.`
 }));
