@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Painel administrativo da CHUTEIRAS MBM.">
+  <title>Admin | CHUTEIRAS MBM</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css"><link rel="stylesheet" href="catalog-shared.css">
+</head>
+<body class="admin-body">
+  <main id="admin-login" class="admin-login">
+    <section class="login-card">
+      <a class="brand" href="index.html"><span class="brand-mark">M</span><span>CHUTEIRAS <b>MBM</b></span></a>
+      <p class="eyebrow">ÁREA RESTRITA</p><h1>Central de gestão.</h1>
+      <p>Produtos, estoque, pedidos e relacionamento em um único painel.</p>
+      <form id="login-form" class="login-form">
+        <label>E-mail<input id="admin-email" type="email" value="admin@chuteirasmbm.com" required></label>
+        <label>Senha<input id="admin-password" type="password" value="mbm2026" required></label>
+        <button class="button primary" type="submit">Entrar no painel <span>→</span></button>
+      </form>
+      <p class="admin-note">Acesso de demonstração: admin@chuteirasmbm.com · mbm2026</p>
+    </section>
+  </main>
+  <div id="admin-app" class="admin-app" hidden>
+    <aside class="admin-sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">M</span><span>CHUTEIRAS <b>MBM</b></span></a>
+      <p class="workspace-label">PAINEL ADMINISTRATIVO</p>
+      <nav class="admin-nav" aria-label="Menu administrativo">
+        <button class="active" data-view="dashboard">Visão geral</button><button data-view="products">Produtos</button><button data-view="orders">Pedidos</button><button data-view="customers">Clientes</button><button data-view="coupons">Cupons</button><button data-view="settings">Configurações</button>
+      </nav>
+      <div class="admin-sidebar-bottom"><a href="index.html">← Ver loja</a><button id="logout" type="button">Sair</button></div>
+    </aside>
+    <section class="admin-main">
+      <header class="admin-header"><div><p class="eyebrow">OPERAÇÃO MBM</p><h1 id="admin-title">Visão geral</h1></div><div class="admin-profile"><span>R</span><div><strong>Renata</strong><small>Administradora</small></div></div></header>
+      <section id="view-dashboard" class="admin-view active">
+        <div class="metric-grid"><article><span>Faturamento estimado</span><strong id="metric-revenue">R$ 0,00</strong><small>Pedidos cadastrados</small></article><article><span>Pedidos em aberto</span><strong id="metric-orders">0</strong><small>Aguardando atendimento</small></article><article><span>Produtos ativos</span><strong id="metric-products">0</strong><small>Disponíveis no catálogo</small></article><article><span>Estoque baixo</span><strong id="metric-stock">0</strong><small>Menos de 4 pares</small></article></div>
+        <div class="admin-columns"><section class="admin-card"><div class="card-title"><h2>Pedidos recentes</h2><button class="text-button" data-go="orders">Ver todos</button></div><div id="recent-orders"></div></section><section class="admin-card"><div class="card-title"><h2>Ações rápidas</h2></div><div class="quick-actions"><button data-go="products">+ Cadastrar produto</button><button data-go="coupons">+ Criar cupom</button><a href="index.html">Abrir vitrine ↗</a></div></section></div>
+      </section>
+      <section id="view-products" class="admin-view"><div class="view-toolbar"><div><h2>Catálogo e estoque</h2><p>Cadastre, atualize e controle a disponibilidade dos modelos.</p></div><button id="open-product-form" class="button primary">+ Novo produto</button></div><div id="product-form-wrap" class="form-panel" hidden><form id="product-form" class="admin-form"><input id="product-id" type="hidden"><label>Nome do produto<input id="product-name" required></label><label>Marca<select id="product-brand" required><option>Nike</option><option>Adidas</option><option>Puma</option><option>Mizuno</option><option>New Balance</option></select></label><label>Modalidade<select id="product-category" required><option>Campo</option><option>Fut7</option><option>Futsal</option></select></label><label>Preço (R$)<input id="product-price" type="number" step="0.01" min="0" required></label><label>Estoque<input id="product-stock" type="number" min="0" required></label><label>Imagem (URL)<input id="product-image" type="url" placeholder="https://..."></label><label class="form-full">Descrição<textarea id="product-description" rows="3"></textarea></label><div class="form-actions form-full"><button type="button" id="cancel-product" class="button">Cancelar</button><button class="button primary" type="submit">Salvar produto</button></div></form></div><div class="table-card"><div class="table-tools"><input id="admin-product-search" type="search" placeholder="Buscar produto"><span id="admin-product-count"></span></div><div class="table-scroll"><table><thead><tr><th>Produto</th><th>Marca</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Status</th><th></th></tr></thead><tbody id="admin-products-table"></tbody></table></div></div></section>
+      <section id="view-orders" class="admin-view"><div class="view-toolbar"><div><h2>Pedidos</h2><p>Atualize o andamento do atendimento e entrega.</p></div><button id="new-order" class="button primary">+ Pedido manual</button></div><div class="table-card"><div class="table-scroll"><table><thead><tr><th>Pedido</th><th>Cliente</th><th>Itens</th><th>Total</th><th>Status</th><th>Data</th></tr></thead><tbody id="orders-table"></tbody></table></div></div></section>
+      <section id="view-customers" class="admin-view"><div class="view-toolbar"><div><h2>Clientes</h2><p>Base de relacionamento e histórico de pedidos.</p></div></div><div id="customers-grid" class="customer-grid"></div></section>
+      <section id="view-coupons" class="admin-view"><div class="view-toolbar"><div><h2>Cupons</h2><p>Crie incentivos de venda para a sua loja.</p></div><button id="open-coupon-form" class="button primary">+ Novo cupom</button></div><div id="coupon-form-wrap" class="form-panel" hidden><form id="coupon-form" class="admin-form compact"><label>Código<input id="coupon-code" placeholder="MBM10" required></label><label>Desconto (%)<input id="coupon-discount" type="number" min="1" max="100" required></label><label>Validade<input id="coupon-validity" type="date" required></label><div class="form-actions"><button class="button primary" type="submit">Criar cupom</button></div></form></div><div id="coupons-grid" class="coupon-grid"></div></section>
+      <section id="view-settings" class="admin-view"><div class="view-toolbar"><div><h2>Configurações da loja</h2><p>Informações usadas no atendimento pelo WhatsApp.</p></div></div><div class="form-panel settings-panel"><form id="settings-form" class="admin-form"><label>Nome da loja<input id="setting-store-name" required></label><label>WhatsApp (somente números)<input id="setting-whatsapp" inputmode="numeric" required></label><label class="form-full">Mensagem de atendimento<textarea id="setting-message" rows="3" required></textarea></label><div class="form-actions form-full"><button class="button primary" type="submit">Salvar configurações</button></div></form></div></section>
+    </section>
+  </div>
+  <div id="toast" class="admin-toast" role="status"></div>
+  <script src="products.js"></script><script src="catalog.js"></script><script src="admin.js"></script>
+</body>
+</html>
