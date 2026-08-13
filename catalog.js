@@ -1,5 +1,5 @@
-const MBM_CATALOG_KEY = 'mbm-shared-catalog-v4';
-const MBM_LEGACY_CATALOG_KEYS = ['mbm-shared-catalog-v3', 'mbm-shared-catalog-v2', 'mbm-shared-catalog-v1'];
+const MBM_CATALOG_KEY = 'mbm-shared-catalog-v5';
+const MBM_LEGACY_CATALOG_KEYS = ['mbm-shared-catalog-v4', 'mbm-shared-catalog-v3', 'mbm-shared-catalog-v2', 'mbm-shared-catalog-v1'];
 
 function prepareProduct(product, index) {
   return {
@@ -14,14 +14,15 @@ function prepareProduct(product, index) {
 function getStoreProducts() {
   try {
     const current = JSON.parse(localStorage.getItem(MBM_CATALOG_KEY));
-    if (Array.isArray(current) && current.length) return current.map(prepareProduct);
+    // An empty array is a valid catalog: it means every product was removed in Admin.
+    if (Array.isArray(current)) return current.map(prepareProduct);
     for (const key of MBM_LEGACY_CATALOG_KEYS) {
       const previous = JSON.parse(localStorage.getItem(key));
       if (!Array.isArray(previous) || !previous.length) continue;
       const legacyById = new Map(previous.map(product => [Number(product.id), product]));
       const migrated = products.map((product, index) => {
         const legacy = legacyById.get(index + 1);
-        return prepareProduct(legacy ? { ...product, price: legacy.price, stock: legacy.stock, active: legacy.active, sizes: legacy.sizes } : product, index);
+        return prepareProduct(legacy ? { ...product, stock: legacy.stock, active: legacy.active, sizes: legacy.sizes } : product, index);
       });
       localStorage.setItem(MBM_CATALOG_KEY, JSON.stringify(migrated));
       return migrated;

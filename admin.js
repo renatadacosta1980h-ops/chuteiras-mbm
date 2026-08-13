@@ -8,7 +8,7 @@ const put = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 let catalog = getStoreProducts();
 let orders = get(KEYS.orders, []);
 let coupons = get(KEYS.coupons, []);
-let settings = get(KEYS.settings, { storeName: 'CHUTEIRAS MBM', whatsapp: '5500000000000', message: 'Olá! Quero saber mais sobre uma chuteira.' });
+let settings = get(KEYS.settings, { storeName: 'CHUTEIRAS MBM', whatsapp: '5531983058097', message: 'Olá! Quero saber mais sobre uma chuteira.' });
 
 function save() { saveStoreProducts(catalog); put(KEYS.orders, orders); put(KEYS.coupons, coupons); put(KEYS.settings, settings); }
 function notice(text) { const toast = $('#toast'); toast.textContent = text; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2400); }
@@ -53,6 +53,7 @@ function openProduct(id) {
 
 function syncCatalog() { catalog = getStoreProducts(); render(); }
 function start() {
+  if (!settings.whatsapp || settings.whatsapp === '5500000000000') { settings.whatsapp = '5531983058097'; put(KEYS.settings, settings); }
   if (localStorage.getItem(KEYS.session) === 'true') { $('#admin-login').hidden = true; $('#admin-app').hidden = false; }
   $('#setting-store-name').value = settings.storeName; $('#setting-whatsapp').value = settings.whatsapp; $('#setting-message').value = settings.message;
   $('#new-order').hidden = true;
