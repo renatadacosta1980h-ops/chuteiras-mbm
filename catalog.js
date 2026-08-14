@@ -1,4 +1,4 @@
-const MBM_CATALOG_KEY = 'mbm-shared-catalog-v5';
+const MBM_CATALOG_KEY = 'mbm-shared-catalog-v6';
 const MBM_LEGACY_CATALOG_KEYS = ['mbm-shared-catalog-v4', 'mbm-shared-catalog-v3', 'mbm-shared-catalog-v2', 'mbm-shared-catalog-v1'];
 
 function prepareProduct(product, index) {

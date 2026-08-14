@@ -1,24 +1,10 @@
 const products = [
-  ['Nike', 'Nike Mercurial Vapor 16 Elite FG - Verde Agua/Rosa', 'Campo', '029427NXA3.jpg', 8],
-  ['Nike', 'Nike Mercurial Superfly 10 Elite FG - Rosa', 'Campo', '098543CTA10.jpg', 5],
-  ['Nike', 'Nike Tiempo Maestro Elite - Rosa', 'Campo', '098713CTA11.jpg', 4],
-  ['Nike', 'Nike Mercurial Vapor 16 Elite FG - Preto/Azul', 'Campo', '060728IDA2.jpg', 1],
-  ['Nike', 'Nike Mercurial Vapor 16 Elite FG - Preto/Verde', 'Campo', '060728IEA1.jpg', 1],
-  ['Nike', 'Nike Mercurial Vapor 16 Elite FG - Vermelho/Preto', 'Campo', '060728P1A12.jpg', 1],
-  ['Nike', 'Nike Mercurial Vapor 16 Elite FG - Branco/Azul/Rosa', 'Campo', '06072816A2.jpg', 1],
-  ['Adidas', 'adidas Predator Elite Lingua Dobrável - Branco (JP6248)', 'Campo', 'adidas-predator-elite-jp6248.jpg', 1],
-  ['Adidas', 'adidas Copa Pure IV Elite - Rosa (KI0586)', 'Campo', 'adidas-copa-pure-iv-elite-ki0586.jpg', 1],
-  ['Adidas', 'adidas F50 Hyperfast Elite - Branco (KJ3432)', 'Campo', 'adidas-f50-hyperfast-elite-kj3432.jpg', 1],
-  ['Adidas', 'adidas F50 Campo - Branco (IF1276)', 'Campo', 'adidas-f50-if1276.jpg', 1]
-].map(([brand, name, category, image, stock = 5], index) => ({
-  id: index + 1,
-  brand,
-  name,
-  category,
-  price: 439.90,
-  image,
-  stock,
-  active: true,
+  ['Adidas', 'Adidas Predator — Modelo 01', 'Campo', 'adidas-213e8427.jpg'], ['Adidas', 'Adidas Predator — Modelo 02', 'Campo', 'adidas-2a189a46.jpg'], ['Adidas', 'Adidas Predator — Modelo 03', 'Campo', 'adidas-33e1f374.jpg'], ['Adidas', 'Adidas Predator — Modelo 04', 'Campo', 'adidas-3ea4144c.jpg'], ['Adidas', 'Adidas Predator — Modelo 05', 'Campo', 'adidas-3fb4933b.jpg'], ['Adidas', 'Adidas Predator — Modelo 06', 'Campo', 'adidas-592738e5.jpg'], ['Adidas', 'Adidas Predator — Modelo 07', 'Campo', 'adidas-77b29243.jpg'], ['Adidas', 'Adidas Predator — Modelo 08', 'Campo', 'adidas-7c32cee9.jpg'], ['Adidas', 'Adidas Predator — Modelo 09', 'Campo', 'adidas-9bebe235.jpg'], ['Adidas', 'Adidas Predator — Modelo 10', 'Campo', 'adidas-a0db2d7c.jpg'], ['Adidas', 'Adidas Predator — Modelo 11', 'Campo', 'adidas-acdab1f8.jpg'], ['Adidas', 'Adidas Predator — Modelo 12', 'Campo', 'adidas-b449a4bc.jpg'], ['Adidas', 'Adidas Predator — Modelo 13', 'Campo', 'adidas-d8546044.jpg'], ['Adidas', 'Adidas Predator — Modelo 14', 'Campo', 'adidas-d9986d72.jpg'], ['Adidas', 'Adidas Predator — Modelo 15', 'Campo', 'adidas-ec2c7f12.jpg'], ['Adidas', 'Adidas Predator — Modelo 16', 'Campo', 'adidas-f8ea4f8b.jpg'], ['Adidas', 'Adidas Predator — Modelo 17', 'Campo', 'adidas-f9326823.jpg'], ['Adidas', 'Adidas Predator — Modelo 18', 'Campo', 'adidas-fd563b4e.jpg'], ['Adidas', 'Adidas Predator — Modelo 19', 'Campo', 'adidas-fe9fb360.jpg'],
+  ['Mizuno', 'Mizuno Morelia — Modelo 01', 'Campo', 'mizuno-4ef3ed93.jpeg'], ['Mizuno', 'Mizuno Morelia — Modelo 02', 'Campo', 'mizuno-8d653a5c.jpg'], ['Mizuno', 'Mizuno Morelia — Modelo 03', 'Campo', 'mizuno-c506784b.jpg'], ['Mizuno', 'Mizuno Morelia — Modelo 04', 'Campo', 'mizuno-d29a4b45.jpg'], ['Mizuno', 'Mizuno Morelia — Modelo 05', 'Campo', 'mizuno-dd310562.jpg'], ['Mizuno', 'Mizuno Morelia — Modelo 06', 'Campo', 'mizuno-ddec5dd6.jpg'],
+  ['Nike', 'Nike Mercurial — Modelo 01', 'Campo', 'nike-04035d65.jpg'], ['Nike', 'Nike Mercurial — Modelo 02', 'Campo', 'nike-07f628e2.jpg'], ['Nike', 'Nike Mercurial — Modelo 03', 'Campo', 'nike-212753c3.jpg'], ['Nike', 'Nike Mercurial — Modelo 04', 'Campo', 'nike-23b048e4.jpg'], ['Nike', 'Nike Mercurial — Modelo 05', 'Campo', 'nike-25220593.jpg'], ['Nike', 'Nike Mercurial — Modelo 06', 'Campo', 'nike-2ae12049.jpg'], ['Nike', 'Nike Mercurial — Modelo 07', 'Campo', 'nike-3bdc239b.jpg'], ['Nike', 'Nike Mercurial — Modelo 08', 'Campo', 'nike-3c248ca6.jpg'], ['Nike', 'Nike Mercurial — Modelo 09', 'Campo', 'nike-3ee38f34.jpg'], ['Nike', 'Nike Mercurial — Modelo 10', 'Campo', 'nike-46257d26.jpg'], ['Nike', 'Nike Mercurial — Modelo 11', 'Campo', 'nike-49444873.jpg'], ['Nike', 'Nike Mercurial — Modelo 12', 'Campo', 'nike-4c5ba086.jpg'], ['Nike', 'Nike Mercurial — Modelo 13', 'Campo', 'nike-4de973df.jpg'], ['Nike', 'Nike Mercurial — Modelo 14', 'Campo', 'nike-65868752.jpg'], ['Nike', 'Nike Mercurial — Modelo 15', 'Campo', 'nike-6eefd929.jpg'], ['Nike', 'Nike Mercurial — Modelo 16', 'Campo', 'nike-790e8ec5.jpg'], ['Nike', 'Nike Mercurial — Modelo 17', 'Campo', 'nike-7ecf5703.jpg'], ['Nike', 'Nike Mercurial — Modelo 18', 'Campo', 'nike-81ab2009.jpg'], ['Nike', 'Nike Mercurial — Modelo 19', 'Campo', 'nike-87b4de7b.jpg'], ['Nike', 'Nike Mercurial — Modelo 20', 'Campo', 'nike-8f500a40.jpg'], ['Nike', 'Nike Mercurial — Modelo 21', 'Campo', 'nike-9533fc9e.jpg'], ['Nike', 'Nike Mercurial — Modelo 22', 'Campo', 'nike-b2aa592d.jpg'], ['Nike', 'Nike Mercurial — Modelo 23', 'Campo', 'nike-c2ad42bc.jpg'], ['Nike', 'Nike Mercurial — Modelo 24', 'Campo', 'nike-de35cd58.jpg'], ['Nike', 'Nike Mercurial — Modelo 25', 'Campo', 'nike-e157492a.jpg'],
+  ['Puma', 'Puma Future — Modelo 01', 'Campo', 'puma-3e428105.jpg'], ['Puma', 'Puma Future — Modelo 02', 'Campo', 'puma-41e6ace5.jpg'], ['Puma', 'Puma Future — Modelo 03', 'Campo', 'puma-7933d768.jpg'], ['Puma', 'Puma Future — Modelo 04', 'Campo', 'puma-b75e6fad.jpg']
+].map(([brand, name, category, image], index) => ({
+  id: index + 1, brand, name, category, image, price: 439.90, stock: 5, active: true,
   sizes: [38, 39, 40, 41, 42, 43, 44],
-  description: `${brand} original para campo. Confirme disponibilidade, tamanho e características com o atendimento MBM.`
+  description: `${brand} para campo, com conforto e desempenho para o seu jogo.`
 }));

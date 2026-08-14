@@ -1,5 +1,5 @@
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
-const CART_KEY = 'mbm-cart';
+const CART_KEY = 'mbm-cart-v2';
 const SETTINGS_KEY = 'mbm-admin-settings';
 const COUPONS_KEY = 'mbm-admin-coupons';
 let catalogProducts = getStoreProducts();
