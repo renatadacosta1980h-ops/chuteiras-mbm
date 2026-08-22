@@ -63,6 +63,6 @@
   <div id="overlay" class="overlay"></div>
   <dialog id="product-dialog"><button id="close-dialog" class="dialog-close" aria-label="Fechar">×</button><div id="dialog-content"></div></dialog>
   <div id="store-toast" class="store-toast" role="status" aria-live="polite"></div>
-  <script src="products.js"></script><script src="catalog.js"></script><script src="app.js"></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
+  <script src="products.js"></script><script src="catalog.js"></script><script src="app.js"></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=3').then(registration=>registration.update());}</script>
 </body>
 </html>

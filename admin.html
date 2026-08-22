@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="admin-page">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#070908"><meta name="robots" content="noindex">
@@ -19,5 +19,5 @@
       <section id="view-settings" class="admin-view"><div class="view-toolbar"><div><h2>Configurações</h2><p>Informações usadas no atendimento pelo WhatsApp.</p></div></div><div class="form-panel settings-panel"><form id="settings-form" class="admin-form"><label>Nome da loja<input id="setting-store-name" required></label><label>WhatsApp (somente números)<input id="setting-whatsapp" inputmode="numeric" required></label><label class="form-full">Mensagem de atendimento<textarea id="setting-message" rows="3" required></textarea></label><div class="form-actions form-full"><button class="button primary" type="submit">Salvar configurações</button></div></form></div><div class="form-panel settings-panel"><h2 class="settings-title">Alterar senha</h2><form id="password-form" class="admin-form"><label>Senha atual<input id="current-password" type="password" autocomplete="current-password" required></label><label>Nova senha<input id="new-password" type="password" minlength="8" autocomplete="new-password" required></label><label>Confirmar nova senha<input id="new-password-confirm" type="password" minlength="8" autocomplete="new-password" required></label><div class="form-actions form-full"><button class="button primary" type="submit">Atualizar senha</button></div></form></div></section>
     </section></div>
   <div id="toast" class="admin-toast" role="status" aria-live="polite"></div>
-  <script src="products.js"></script><script src="catalog.js"></script><script src="admin.js"></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
+  <script src="products.js"></script><script src="catalog.js"></script><script src="admin.js"></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v=3').then(registration=>registration.update());}</script>
 </body></html>
