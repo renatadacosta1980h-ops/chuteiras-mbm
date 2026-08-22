@@ -1,0 +1,12 @@
+{
+  "name": "CHUTEIRAS MBM",
+  "short_name": "MBM",
+  "description": "Loja de chuteiras CHUTEIRAS MBM.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070908",
+  "theme_color": "#070908",
+  "icons": [{ "src": "pwa-icon.png", "sizes": "1280x1280", "type": "image/png", "purpose": "any maskable" }]
+}

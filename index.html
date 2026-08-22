@@ -4,9 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CHUTEIRAS MBM — chuteiras para campo, society e futsal.">
+  <meta name="theme-color" content="#070908">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>CHUTEIRAS MBM | Jogue no seu melhor</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="pwa-icon.png">
+  <link rel="apple-touch-icon" href="pwa-icon.png">
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="catalog-shared.css"><link rel="stylesheet" href="checkout.css">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="catalog-shared.css"><link rel="stylesheet" href="checkout.css"><link rel="stylesheet" href="store-enhancements.css">
 </head>
 <body>
   <header class="topbar">
@@ -56,6 +63,6 @@
   <div id="overlay" class="overlay"></div>
   <dialog id="product-dialog"><button id="close-dialog" class="dialog-close" aria-label="Fechar">×</button><div id="dialog-content"></div></dialog>
   <div id="store-toast" class="store-toast" role="status" aria-live="polite"></div>
-  <script src="products.js"></script><script src="catalog.js"></script><script src="app.js"></script>
+  <script src="products.js"></script><script src="catalog.js"></script><script src="app.js"></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}</script>
 </body>
 </html>

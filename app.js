@@ -43,7 +43,7 @@ function renderProducts() {
   document.querySelector('#result-count').textContent = `${list.length} ${list.length === 1 ? 'modelo encontrado' : 'modelos encontrados'}`;
   grid.innerHTML = list.map(product => `<article class="product-card">
     <button class="image-button" data-product="${product.id}" aria-label="Ver ${product.name}"><img src="${product.image}" alt="${product.name}"></button>
-    <div class="product-info"><p class="tag">${product.brand} · ${product.category}</p><h3>${product.name}</h3><p class="price">${productPrice(product)}</p><p class="stock-label">${product.stock} pares disponíveis</p>${productAction(product)}</div>
+    <div class="product-info"><p class="tag">${product.brand} · ${product.category}</p><h3>${product.name}</h3><p class="price">${productPrice(product)}</p>${productAction(product)}</div>
   </article>`).join('') || '<p class="empty">Nenhum modelo disponível com estes filtros.</p>';
 }
 
@@ -70,7 +70,7 @@ function consultProduct(id) { const product = productById(id); if (!product) ret
 
 function showProduct(id) {
   const product = productById(id); if (!product || !isProductAvailable(product)) return;
-  document.querySelector('#dialog-content').innerHTML = `<img class="dialog-image" src="${product.image}" alt="${product.name}"><div class="dialog-info"><p class="tag">${product.brand} · ${product.category}</p><h2>${product.name}</h2><p class="price">${productPrice(product)}</p><p>${product.description}</p><p class="stock-label">${product.stock} pares disponíveis</p><p class="sizes">${product.sizes.map(size => `<span>${size}</span>`).join('')}</p>${productAction(product)}</div>`;
+  document.querySelector('#dialog-content').innerHTML = `<img class="dialog-image" src="${product.image}" alt="${product.name}"><div class="dialog-info"><p class="tag">${product.brand} · ${product.category}</p><h2>${product.name}</h2><p class="price">${productPrice(product)}</p><p>${product.description}</p><p class="availability-note">Confirme o tamanho disponível pelo WhatsApp antes de finalizar.</p>${productAction(product)}</div>`;
   document.querySelector('#product-dialog').showModal();
 }
 

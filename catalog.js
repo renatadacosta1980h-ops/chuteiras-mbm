@@ -39,5 +39,5 @@ function saveStoreProducts(items) {
 }
 
 function isProductAvailable(product) {
-  return Boolean(product) && product.active !== false && Number(product.stock) > 0;
+  return Boolean(product) && product.active !== false;
 }
